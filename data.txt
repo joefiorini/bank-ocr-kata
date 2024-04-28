@@ -1,0 +1,61 @@
+    _  _     _  _  _  _  _ 
+  | _| _||_||_ |_   ||_||_|
+  ||_  _|  | _||_|  ||_| _|
+
+
+1)
+	none
+	two spaces + |
+	two spaces + |
+2)
+	space + _ + space
+	space + _ + |
+	| + _ + space
+3)
+	space + _ + space
+	space + _ + |
+	space + _ + |
+
+4)
+	none
+	| + _ + |
+	space + space + |
+5)
+	space + _ + space
+	| + _ + space
+	space + _ + |
+6)
+	space + _ + space
+	| + _ + space
+	| + _ + |
+
+7)
+	space + _ + space
+	space + space + |
+	space + space + |
+
+8)
+	space + _ + space
+	| + _ + |
+	| + _ + |
+
+9)
+	space + _ + space
+	| + _ + |
+	space + _ + |
+
+
+Rule 1
+	If nothing on first line, either 1 or 4
+	First character of line 2 | then 4 else 1
+Rule 2
+	Second line is space _ | then 2 or 3
+	First character of 3rd line is | then 2
+Rule 3
+	Second line is "|_ " = 5 or 6
+	Line 3 starts | then 6
+Rule 4
+	Second line is "|_|" then 8 or 9
+	Line 3 starts | then 8
+Rule 5
+	Second line "  |" then 7
