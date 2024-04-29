@@ -12,11 +12,17 @@ func TestValid(t *testing.T) {
 
 	fmt.Println(GetChecksum("345882865"))
 
-	assert.True(t, got)
+	assert.Equal(t, Valid, got)
 }
 
 func TestInvalid(t *testing.T) {
 	got := Check("664371495")
 
-	assert.False(t, got)
+	assert.Equal(t, Invalid, got)
+}
+
+func TestUnknown(t *testing.T) {
+	got := Check("123??6789")
+
+	assert.Equal(t, Unknown, got)
 }

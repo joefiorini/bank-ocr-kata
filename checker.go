@@ -2,10 +2,30 @@ package main
 
 import (
 	"strconv"
+	"strings"
 )
 
-func Check(input string) bool {
-	return checkDigits(input, 0, 0)%11 == 0
+type Result int
+
+const (
+	valid          = 2
+	Valid   Result = valid
+	invalid        = 0
+	Invalid Result = invalid
+	unknown        = 1
+	Unknown Result = unknown
+)
+
+func Check(input string) Result {
+	if strings.Contains(input, "?") {
+		return unknown
+	}
+
+	if GetChecksum(input)%11 == 0 {
+		return valid
+	}
+
+	return invalid
 }
 
 func GetChecksum(input string) int {

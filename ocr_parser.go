@@ -2,7 +2,7 @@ package main
 
 import (
 	"bufio"
-	"fmt"
+	// "fmt"
 	"strconv"
 	"strings"
 )
@@ -28,9 +28,9 @@ func OcrParse(input string) string {
 	line2_scanner := createScanner(lines[1], 3)
 	line3_scanner := createScanner(lines[2], 3)
 
-	fmt.Printf("--%s--\n", lines[0])
-	fmt.Printf("--%s--\n", lines[1])
-	fmt.Printf("--%s--\n", lines[2])
+	// fmt.Printf("--%s--\n", lines[0])
+	// fmt.Printf("--%s--\n", lines[1])
+	// fmt.Printf("--%s--\n", lines[2])
 
 	for line1_scanner.Scan() && line2_scanner.Scan() && line3_scanner.Scan() {
 		column := [3]string{line1_scanner.Text(), line2_scanner.Text(), line3_scanner.Text()}
