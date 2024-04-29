@@ -21,7 +21,7 @@ func Check(input string) Result {
 		return unknown
 	}
 
-	if GetChecksum(input)%11 == 0 {
+	if GetChecksum(input) == 0 {
 		return valid
 	}
 
@@ -32,6 +32,9 @@ func GetChecksum(input string) int {
 	return checkDigits(input, 0, 0)
 }
 
+// Recursively calculate the checksum of the given account number
+// by multiplying each digit by its reverse index + 1 and summing
+// the products; return the final result mod 11 for the checksum
 func checkDigits(number string, idx int, sum int) int {
 	if idx < len(number) {
 		digit, _ := strconv.Atoi(string(number[idx]))
@@ -39,7 +42,7 @@ func checkDigits(number string, idx int, sum int) int {
 		return checkDigits(number, idx+1, sum+digit*(10-(idx+1)))
 	} else {
 		// fmt.Println()
-		return sum
+		return sum % 11
 	}
 
 }
