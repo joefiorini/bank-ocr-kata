@@ -11,4 +11,5 @@ func main() {
 `
 
 	fmt.Println(OcrParse(test_str))
+	fmt.Println(Check(test_str))
 }
