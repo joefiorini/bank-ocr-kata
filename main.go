@@ -7,10 +7,6 @@ import (
 )
 
 func main() {
-	// 	test_str := `    _  _     _  _  _  _  _
-	//   | _| _||_||_ |_   ||_||_|
-	//   ||_  _|  | _||_|  ||_| _|
-	// `
 	file, err := os.ReadFile("data.txt")
 
 	if err != nil {
@@ -30,6 +26,5 @@ func main() {
 			fmt.Printf("ERR")
 		}
 		fmt.Println()
-		// fmt.Println(Check(accountNumber))
 	}
 }

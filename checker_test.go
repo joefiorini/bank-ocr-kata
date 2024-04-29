@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -9,8 +8,6 @@ import (
 
 func TestValid(t *testing.T) {
 	got := Check("345882865")
-
-	fmt.Println(GetChecksum("345882865"))
 
 	assert.Equal(t, Valid, got)
 }
